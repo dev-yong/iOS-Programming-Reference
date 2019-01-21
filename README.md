@@ -6,16 +6,16 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 ## Table of Contents
 
-- [Computer Science](#Computer Science)
-- [Clean Code](#Clean code)
+- [Computer Science](#Computer_Science)
+- [Clean Code](#Clean_code)
 - [OOP](#OOP)
 - [Swift](Swift)
 - [Style](#Style)
-- [Architecture Pattern](#Architecture Pattern)
-- [Design Pattern](#Design Pattern)
+- [Architecture Pattern](#Architecture_Pattern)
+- [Design Pattern](#Design_Pattern)
 - [Testing](#Testing)
-- [Concurrent Programming](#Concurrent Programming)
-- [Funtional Programming](#Funtional Programming)
+- [Concurrent Programming](#Concurrent_Programming)
+- [Funtional Programming](#Funtional_Programming)
 - [RxSwift](#RxSwift)
 
 # Computer Science
