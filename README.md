@@ -76,6 +76,9 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - Lock, Semaphore
 
 # Funtional Programming
+- [Swift와 함수형 프로그래밍의 역사](https://academy.realm.io/kr/posts/tryswift-rob-napier-swift-legacy-functional-programming/
+- [Swift로 함수형 프로그래밍 시작하기](https://www.youtube.com/watch?v=H9aCQt2SPpQ)
+- [Functional Programming 이 뭐하는 건가요?](https://www.youtube.com/watch?time_continue=2&v=HZkqMiwT-5A)
 
 # RxSwift
 
