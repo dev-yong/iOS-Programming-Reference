@@ -17,6 +17,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Concurrent Programming](#Concurrent_Programming)
 - [Funtional Programming](#Funtional_Programming)
 - [RxSwift](#RxSwift)
+- [Git](#Git)
 
 # Computer Science
 
@@ -87,4 +88,9 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Examples](https://github.com/DroidsOnRoids/RxSwiftExamples)
 - [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
 
-  
+# Git
+
+- [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)
+- Flow
+  - [우린 Git-flow를 사용하고 있어요](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
+  - [Git flow, GitHub flow, GitLab flow](https://ujuc.github.io/2015/12/16/git-flow-github-flow-gitlab-flow/)
