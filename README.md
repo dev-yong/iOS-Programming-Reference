@@ -10,6 +10,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Clean Code](#Clean_code)
 - [OOP](#OOP)
 - [Swift](Swift)
+- [Dependency Manager](#Dependency_Manager)
 - [Style](#Style)
 - [Architecture Pattern](#Architecture_Pattern)
 - [Design Pattern](#Design_Pattern)
@@ -38,6 +39,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 - [Swift 성능 이해하기](https://academy.realm.io/kr/posts/letswift-swift-performance/)
 - [Protocol Oriented Programming](https://www.slideshare.net/slideshow/embed_code/key/JnOqM0ODnB27EB)
+
+# Dependency Manager
+
+- [Cocoapod](https://github.com/CocoaPods/CocoaPods)
+- [Carthage](https://github.com/Carthage/Carthage)
+- [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
 # Style
 
