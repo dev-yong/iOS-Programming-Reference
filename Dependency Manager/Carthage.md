@@ -86,7 +86,7 @@ $ brew link carthage
 3. `carthage update` 를 실행하면, 종속성을 가져 와서 각 폴더를 작성하거나 사전 컴파일된 프레임 워크를 다운로드합니다. `carthage update --platform ios` 를 이용하여 iOS만 빌드할 수 있습니다.
 
 4. Carthage/Build 폴더에서 framework를 "Linked Frameworks and Libraries"에 추가해줍니다. 
-   ![](images/1.Linked Frameworks and Libraries.png)
+   ![](images/1.LinkedFrameworksAndLibraries.png)
 
 5. **Run Script Phase** 를 수정합니다.
 
@@ -96,13 +96,13 @@ $ brew link carthage
    $(SRCROOT)/Carthage/Build/iOS/<FRAMEWORK NAME>.framework
    ```
 
-   ![](images/2.Run Script Phase.png)
+   ![](images/2.RunScriptPhase.png)
 
 6. **Unit test or a framework**
 
-   ![](images/3-1.Unit Test or Framework.png)
+   ![](images/3.UnitTestOrFramework.png)
 
-   ![](images/3-2.Unit Test or Framework.png)
+   ![](images/4.UnitTestOrFramework2.png)
 
 # Reference
 

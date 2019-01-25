@@ -48,14 +48,15 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Style
 
-1. [Swift 개발자처럼 변수 이름 짓기](https://soojin.ro/blog/english-for-developers-swift)
-2. API Design Guidelines
+1. [Building Better Apps with Value Types in Swift](https://developer.apple.com/videos/play/wwdc2015/414/)
+2. [Swift 개발자처럼 변수 이름 짓기](https://soojin.ro/blog/english-for-developers-swift)
+3. API Design Guidelines
    - [(eng)](https://swift.org/documentation/api-design-guidelines/)
    - [(kor)](https://minsone.github.io/swift-internals/api-design-guidelines/?utm_source=soojinro&utm_medium=referral)
    - [(kor) 요약본](https://soojin.ro/blog/swift-api-design-guidelines-abbr)
-3. [Ray wenderlich style guide](https://github.com/raywenderlich/swift-style-guide)
-4. [Github style guide (kor)](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
-5. [Swift Lint](https://github.com/realm/SwiftLint)
+4. [Ray wenderlich style guide](https://github.com/raywenderlich/swift-style-guide)
+5. [Github style guide (kor)](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
+6. [Swift Lint](https://github.com/realm/SwiftLint)
 
 # Architecture Pattern
 
