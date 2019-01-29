@@ -12,7 +12,7 @@ Carthage란 무엇인가, Cocoapod과의 차이, Carthage를 적용하는 방법
 - [Apply Carthage(feat. RxSwift)](#Apply_Carthage(feat._RxSwift))
 - [Refrence](#Reference)
 
-# Dependency Manager
+## Dependency Manager
 
 
 
@@ -28,9 +28,9 @@ https://github.com/Carthage/Carthage
 
 
 
-# Apply Carthage(feat. RxSwift)
+## Apply Carthage(feat. RxSwift)
 
-## [Installing Carthage](https://github.com/Carthage/Carthage#installing-carthage)
+#### 1. [Installing Carthage](https://github.com/Carthage/Carthage#installing-carthage)
 
 Carthage를 설치하는 여러 방법이 존재합니다. 이 게시물은 **Homebrew**를 이용한 설치에 대한 내용입니다.
 
@@ -58,7 +58,7 @@ $ sudo chown $(whoami):admin /usr/local/Frameworks
 $ brew link carthage
 ```
 
-## [Adding frameworks to an application fo iOS, tvOS, or watchOS](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
+#### 2. [Adding frameworks to an application fo iOS, tvOS, or watchOS](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
 
 1. Cartfile 생성
 
@@ -104,6 +104,23 @@ $ brew link carthage
 
    ![](images/4.UnitTestOrFramework2.png)
 
-# Reference
+## .gitignore
+
+```
+# Created by https://www.gitignore.io/api/xcode,carthage,cocoapods,swiftpackagemanager
+# Edit at https://www.gitignore.io/?templates=xcode,carthage,cocoapods,swiftpackagemanager
+
+### Carthage ###
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+Carthage/Checkouts/
+```
+
+## Reference
 
 - https://www.raywenderlich.com/416-carthage-tutorial-getting-started
+- https://www.mokacoding.com/blog/setting-up-testing-libraries-with-carthage-xcode7/
