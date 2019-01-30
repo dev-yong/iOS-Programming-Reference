@@ -6,23 +6,24 @@ Carthage란 무엇인가, Cocoapod과의 차이, Carthage를 적용하는 방법
 
 ## Table of Contents
 
-- [Dependency Manager](#Dependency_Manager)
-- [Cocoapod](#Cocoapod?)
-- [Carthage](#Carthage?)
-- [Apply Carthage(feat. RxSwift)](#Apply_Carthage(feat._RxSwift))
+- [Dependency Manager](#Dependency-Manager)
+- [Cocoapod](#Cocoapod)
+- [Carthage](#Carthage)
+- [Apply Carthage(feat. RxSwift)](#Apply-Carthage(feat.-RxSwift))
+- [.gitignore](#.gitignore)
 - [Refrence](#Reference)
 
-## Dependency Manager
+# Dependency Manager
 
 
 
-# Cocoapod?
+# Cocoapod
 
 https://github.com/CocoaPods/CocoaPods
 
 
 
-# Carthage?
+# Carthage
 
 https://github.com/Carthage/Carthage
 
