@@ -2,7 +2,7 @@
 
 ## Overview
 
-함수명, 변수명들을 일정 규칙과 문법을 따라 만든다면, 이름만을 보고 그것들의 역할을 어느정도 유추가 가능할 것입니다. 
+함수명, 변수명들을 일정 규칙과 문법을 따라 만든다면, 이름만을 보고 그것들의 역할을 어느정도 유추가 가능할 것입니다. 
 
 [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)와 노수진님의 [Swift 개발자처럼 변수 이름 짓기](https://soojin.ro/blog/english-for-developers-swift), [Bool 변수 이름 제대로 짓기 위한 최소한의 영어 문법](https://soojin.ro/blog/naming-boolean-variables) 를 읽고 입맛대로 정리한 내용입니다. 개인적인 주관이 다수 섞여있습니다.
 
