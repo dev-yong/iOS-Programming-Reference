@@ -124,7 +124,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 
 - **factory methods는 “make”로 시작**합니다. 
 
-  > [Q. Factory Method란?](#Q.-Factory-Method란?) 
+  > [Q. Factory Method?](#Q.-Factory-Method?) 
 
 - ```
   x.makeIterator()
@@ -132,7 +132,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 
 - **사이드 이펙트에 따라 함수와 메소드 이름을 지정**합니다.
 
-  > [Q. Side Effect란?](#Q.-Side-Effect란?)
+  > [Q. Side Effect?](#Q.-Side-Effect?)
 
   - 사이드 이펙트가 없다(**Pure Function**)? **명사구**
 
@@ -156,7 +156,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 
   - **Mutating/nonmutating** 메소드 쌍을 **일관되게 이름을 지정**합니다.
 
-    > [Q. Mutating과 Non Mutating이란?](#Q.-Mutating과-Non-Mutating이란?)
+    > [Q. Mutating, Non Mutating?](#Q.-Mutating,-Non-Mutating?)
     >
     > mutating method는 종종 유사한 구문의 nonmutating method가 존재하지만, 
     >
@@ -286,7 +286,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 
 
 
-###### Q. Factory Method란?
+###### Q. Factory Method?
 
 > https://en.wikipedia.org/wiki/Factory_method_pattern
 >
@@ -294,7 +294,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 >
 > 아직은 잘 모르겠습니다. 공부가 필요합니다.
 
-###### Q. Side Effect란?
+###### Q. Side Effect?
 
 > 사이드 이펙트는 단순히 부정적인 것을 뜻하지 않습니다.
 >
@@ -303,7 +303,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 > - 실행중에 어떤 객체를 접근해서 변화가 일어나는 행위(라이브러리 I/O, 객체 변경 등)
 > - 함수 외부의 State 변화
 
-###### Q. Mutating과 Non Mutating이란?
+###### Q. Mutating, Non Mutating?
 
 > mutating의 사전적 의미는 "변화시키다"입니다.
 >
