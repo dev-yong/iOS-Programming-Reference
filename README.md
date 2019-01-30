@@ -60,7 +60,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 > 개인 정리
 >
-> - [API Design Guidelines + Grammer](/Style/API-Design-Guidelines-+-Grammar.md)
+> - [API Design Guidelines With Grammar](/Style/API-Design-Guidelines-With-Grammar.md)
 >
 > - [SwiftLint](/Style/SwiftLint.md)
 
