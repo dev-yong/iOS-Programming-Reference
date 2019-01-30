@@ -58,6 +58,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 5. [Github style guide (kor)](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
 6. [Swift Lint](https://github.com/realm/SwiftLint)
 
+> 개인 정리
+>
+> - [API Design Guidelines + Grammer](/Style/API-Design-Guidelines-+-Grammar.md)
+>
+> - [SwiftLint](/Style/SwiftLint.md)
+
 # Architecture Pattern
 
 - [Apple Model-View-Controller](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
