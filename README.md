@@ -41,8 +41,8 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Swift
 
-- [ ] [Swift 성능 이해하기: Value 타입, Protocol과 스위프트의 성능 최적화 - 유용하님](https://academy.realm.io/kr/posts/letswift-swift-performance/)
-- [ ] [Protocol Oriented Programming - 조성규님](https://www.slideshare.net/slideshow/embed_code/key/JnOqM0ODnB27EB)
+- [x] [Swift 성능 이해하기: Value 타입, Protocol과 스위프트의 성능 최적화 - 유용하님](https://academy.realm.io/kr/posts/letswift-swift-performance/)
+- [x] [Protocol Oriented Programming - 조성규님](https://www.slideshare.net/slideshow/embed_code/key/JnOqM0ODnB27EB)
 - [ ] [WWDC15. Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015/408/)
 - [ ] [WWDC15. Building Better Apps with Value Types in Swift](https://developer.apple.com/videos/play/wwdc2015/414/)
 - [ ] [WWDC16. Protocol and Value Oriented Programming in UIKit Apps](https://developer.apple.com/videos/play/wwdc2016/419/)
@@ -52,8 +52,8 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Dependency Manager
 
-- [ ] [Cocoapod](https://github.com/CocoaPods/CocoaPods)
-- [ ] [Carthage](https://github.com/Carthage/Carthage)
+- [x] [Cocoapod](https://github.com/CocoaPods/CocoaPods)
+- [x] [Carthage](https://github.com/Carthage/Carthage)
 - [ ] [Swift Package Manager](https://github.com/apple/swift-package-manager)
 - [ ] [WWDC18. Getting to Know Swift Package Manager](https://developer.apple.com/videos/play/wwdc2018/411/)
 
