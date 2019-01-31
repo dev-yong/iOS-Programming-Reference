@@ -99,7 +99,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [WWDC18. What’s New in Energy Debugging](https://developer.apple.com/videos/play/wwdc2018/228/)
 - [ ] [WWDC18. Advanced Debugging with Xcode and LLDB](https://developer.apple.com/videos/play/wwdc2018/412/)
 
-# Memory, Energy
+# Resource
 
 - [ ] [WWDC18. iOS Memory Deep Dive](https://developer.apple.com/videos/play/wwdc2018/416/)
 - [ ] [WWDC17. Writing Energy Efficient Apps](https://developer.apple.com/videos/play/wwdc2017/238/)
