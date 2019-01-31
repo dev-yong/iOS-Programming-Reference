@@ -14,16 +14,20 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Style](#Style)
 - [Architecture Pattern](#Architecture-Pattern)
 - [Design Pattern](#Design-Pattern)
+- [Debug](#Debug)
+- [Resource](#Resource)
 - [Testing](#Testing)
 - [Concurrent Programming](#Concurrent-Programming)
 - [Funtional Programming](#Funtional-Programming)
 - [RxSwift](#RxSwift)
 - [Git](#Git)
+- [ETC](#ETC)
 
 # Computer Science
 
 - Data Structure
 - Algorithm
+  - [ ] [WWDC18. Embracing Algorithms](https://developer.apple.com/videos/play/wwdc2018/223/)
 
 # Clean code
 
@@ -37,14 +41,21 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Swift
 
-- [ ] [Swift 성능 이해하기](https://academy.realm.io/kr/posts/letswift-swift-performance/)
-- [ ] [Protocol Oriented Programming](https://www.slideshare.net/slideshow/embed_code/key/JnOqM0ODnB27EB)
+- [ ] [Swift 성능 이해하기: Value 타입, Protocol과 스위프트의 성능 최적화 - 유용하님](https://academy.realm.io/kr/posts/letswift-swift-performance/)
+- [ ] [Protocol Oriented Programming - 조성규님](https://www.slideshare.net/slideshow/embed_code/key/JnOqM0ODnB27EB)
+- [ ] [WWDC15. Protocol-Oriented Programming in Swift](https://developer.apple.com/videos/play/wwdc2015/408/)
+- [ ] [WWDC15. Building Better Apps with Value Types in Swift](https://developer.apple.com/videos/play/wwdc2015/414/)
+- [ ] [WWDC16. Protocol and Value Oriented Programming in UIKit Apps](https://developer.apple.com/videos/play/wwdc2016/419/)
+- [ ] [WWDC18. Swift Generics (Expanded)](https://developer.apple.com/videos/play/wwdc2018/406/)
+- [ ] [WWDC18. Using Collections Effectively](https://developer.apple.com/videos/play/wwdc2018/229/)
+
 
 # Dependency Manager
 
 - [ ] [Cocoapod](https://github.com/CocoaPods/CocoaPods)
 - [ ] [Carthage](https://github.com/Carthage/Carthage)
 - [ ] [Swift Package Manager](https://github.com/apple/swift-package-manager)
+- [ ] [WWDC18. Getting to Know Swift Package Manager](https://developer.apple.com/videos/play/wwdc2018/411/)
 
 > 개인 정리
 >
@@ -52,7 +63,6 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Style
 
-- [ ] [Building Better Apps with Value Types in Swift](https://developer.apple.com/videos/play/wwdc2015/414/)
 - [x] [Swift 개발자처럼 변수 이름 짓기](https://soojin.ro/blog/english-for-developers-swift)
 - [x] API Design Guidelines
    - [(eng)](https://swift.org/documentation/api-design-guidelines/)
@@ -82,15 +92,29 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [Swift Design Pattern](https://github.com/ochococo/Design-Patterns-In-Swift)
 - [ ] [Collection for Design Patterns in Swift](https://medium.com/swiftworld/collection-for-design-patterns-in-swift-67265359aa47)
 
+# Debug
+
+- [ ] [WWDC17. Debugging with Xcode 9](https://developer.apple.com/videos/play/wwdc2017/404/)
+- [ ] [WWDC16. Visual Debugging with Xcode](https://developer.apple.com/videos/play/wwdc2016/410/)
+- [ ] [WWDC18. What’s New in Energy Debugging](https://developer.apple.com/videos/play/wwdc2018/228/)
+- [ ] [WWDC18. Advanced Debugging with Xcode and LLDB](https://developer.apple.com/videos/play/wwdc2018/412/)
+
+# Memory, Energy
+
+- [ ] [WWDC18. iOS Memory Deep Dive](https://developer.apple.com/videos/play/wwdc2018/416/)
+- [ ] [WWDC17. Writing Energy Efficient Apps](https://developer.apple.com/videos/play/wwdc2017/238/)
+
 # Testing
 
 - Unit Test
 - UI Test
+  - [ ] [WWDC15. UI Testing in Xcode](https://developer.apple.com/videos/play/wwdc2015/406/)
 
 # Concurrent Programming
 
 - GCD
 - Operation Queue
+  - [ ] [WWDC15. Advanced NSOperations](https://developer.apple.com/videos/play/wwdc2015/226/)
 - POSIX thread
 - Lock, Semaphore
 
@@ -113,3 +137,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - Flow
   - [ ] [우린 Git-flow를 사용하고 있어요](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
   - [ ] [Git flow, GitHub flow, GitLab flow](https://ujuc.github.io/2015/12/16/git-flow-github-flow-gitlab-flow/)
+
+# ETC
+
+- [ ] [WWDC18. New Localization Workflows in Xcode 10](https://developer.apple.com/videos/play/wwdc2018/404/)
+- Auto Layout, Animation
+  - [ ] [WWDC18. High Performance Auto Layout](https://developer.apple.com/videos/play/wwdc2018/220/)
+  - [ ] [WWDC15. Mysteries of Auto Layout, Part 1](https://developer.apple.com/videos/play/wwdc2015/218/)
+  - [ ] [WWDC15. Mysteries of Auto Layout, Part 2](https://developer.apple.com/videos/play/wwdc2015/219/)
+  - [ ] [WWDC17. Advanced Animations with UIKit](https://developer.apple.com/videos/play/wwdc2017/230/)
