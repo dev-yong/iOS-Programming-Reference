@@ -6,8 +6,6 @@
 
 [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)와 노수진님의 [Swift 개발자처럼 변수 이름 짓기](https://soojin.ro/blog/english-for-developers-swift), [Bool 변수 이름 제대로 짓기 위한 최소한의 영어 문법](https://soojin.ro/blog/naming-boolean-variables) 를 읽고 입맛대로 정리한 내용입니다. 개인적인 주관이 다수 섞여있습니다.
 
-
-
 ## Fundamentals
 
 API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의 명료성**입니다. 이때, **명료성은 간결성보다 중요**합니다.
@@ -223,16 +221,30 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 
   > **Uses of Boolean methods and properties should read as assertions about the receiver** when the use is nonmutating
   >
-  > Bool 메서드나 프로퍼티 이름은 인스턴스에 대한 평서문처럼 읽혀야한다…??
+  > Bool 메서드나 프로퍼티 이름은 인스턴스에 대한 평서문처럼 읽혀야한다.
   >
-  > receiver가 가리키는 것이 무엇일까??
+  > Objective-C에서는 `someObject` 는 `doSomething` (**message**)에 대하여 값의 '호출' 혹은 '요청'을 **받는** 입장이기에, **receiver** 라고 불렀습니다.
+  >
+  > Method 혹은 Property를 호출한다 = Receiver에게 message를 보낸다.
+  >
+  > ```objc
+  > [someObject doSomething];
+  > //someObject.doSomething()
+  > ```
+  >
+  > 참고 : [Programming with Objective-C](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html)
+  >
+  > ( 노수진님의 첨삭을 통하여 수정하였습니다. 감사합니다 :] )
 
   ```swift
   //Collection
   x.isEmpty					//x가 비어있는가?
-  
+  							//receiver 	: x
+  							//message	: isEmpty
   //SKNode
   node1.intersects(node2)		//node1이 node2와 교차하는가?
+  							//receiver 	: node1
+  							//Message	: intersects
   ```
 
   - 조동사 + 동사원형
@@ -307,15 +319,17 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 
 > mutating의 사전적 의미는 "변화시키다"입니다.
 >
-> `mutating` keyword는 Value Type(struct, enum 등)과 같은 **immutable한 것들을 muttable**하게 만들어줍니다.
+> `mutating` 은 "해당 method가 instance의 property 값을 바꾼다.(mutate하다)"를 나타내기 위함입니다.
+>
+> immutable은 `let`, mutable은 `var` 키워드로서 설정을 해줍니다.
 >
 > ```swift
 > struct Point {
->     var x = 0.0, y = 0.0
->     func moveBy(x deltaX: Double, y deltaY: Double) {
->         x += deltaX
->         y += deltaY
->     }
+>  var x = 0.0, y = 0.0
+>  mutating func moveBy(x deltaX: Double, y deltaY: Double) {
+>      x += deltaX
+>      y += deltaY
+>  }
 > }
 > var somePoint = Point(x: 1.0, y: 1.0)
 > somePoint.moveBy(x: 2.0, y: 3.0)
@@ -323,7 +337,7 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 > // Prints "The point is now at (3.0, 4.0)"
 > ```
 
-
+노수진님의 조언을 통하여 보완되었습니다. 감사합니다 :] 
 
 ## Reference
 
