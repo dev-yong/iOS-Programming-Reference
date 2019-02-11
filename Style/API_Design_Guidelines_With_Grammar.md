@@ -6,6 +6,14 @@
 
 [Swift API Design Guidelines](https://swift.org/documentation/api-design-guidelines/)와 노수진님의 [Swift 개발자처럼 변수 이름 짓기](https://soojin.ro/blog/english-for-developers-swift), [Bool 변수 이름 제대로 짓기 위한 최소한의 영어 문법](https://soojin.ro/blog/naming-boolean-variables) 를 읽고 입맛대로 정리한 내용입니다. 개인적인 주관이 다수 섞여있습니다.
 
+## Table of Contents
+
+- [Fundamentals](#Fundamentals)
+- [Naming](#Naming)
+  - [Promote Clear Usage](#Promote-Clear-Usage)
+  - [Strive for Fluent Usage](#Strive-for-Fluent-Usage)
+- [Reference](#Reference)
+
 ## Fundamentals
 
 API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의 명료성**입니다. 이때, **명료성은 간결성보다 중요**합니다.
@@ -13,8 +21,6 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 또한, 모든 선언문에는  **Documentation Comments을 작성**해줘야합니다. (참고 : [Markup Formatting Reference](https://developer.apple.com/library/archive/documentation/Xcode/Reference/xcode_markup_formatting_ref/))
 
 > 간단한 용어로 API 기능을 설명하지 못한다면, **API 설계에 문제가 있을 가능성이 높습니다.**
-
-
 
 ## Naming
 
@@ -94,8 +100,6 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
   func addObserver(_ observer: NSObject, forKeyPath path: String)
   grid.addObserver(self, forKeyPath: graphics) // clear
   ```
-
-
 
 ### Strive for Fluent Usage
 
@@ -325,19 +329,17 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 >
 > ```swift
 > struct Point {
->  var x = 0.0, y = 0.0
->  mutating func moveBy(x deltaX: Double, y deltaY: Double) {
->      x += deltaX
->      y += deltaY
->  }
+> var x = 0.0, y = 0.0
+> mutating func moveBy(x deltaX: Double, y deltaY: Double) {
+> x += deltaX
+> y += deltaY
+> }
 > }
 > var somePoint = Point(x: 1.0, y: 1.0)
 > somePoint.moveBy(x: 2.0, y: 3.0)
 > print("The point is now at (\(somePoint.x), \(somePoint.y))")
 > // Prints "The point is now at (3.0, 4.0)"
 > ```
-
-노수진님의 조언을 통하여 보완되었습니다. 감사합니다 :] 
 
 ## Reference
 
