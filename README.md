@@ -132,7 +132,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Git
 
-- [ ] [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)
+- [x] [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)
 - [ ] [Github cheat sheet](https://github.com/tiimgreen/github-cheat-sheet)
 - Flow
   - [ ] [우린 Git-flow를 사용하고 있어요](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
