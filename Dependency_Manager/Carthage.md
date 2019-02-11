@@ -7,7 +7,7 @@ Carthage란 무엇인가, Cocoapod과의 차이, Carthage를 적용하는 방법
 ## Table of Contents
 
 - [Dependency Manager](#Dependency-Manager)
-- [Cocoapod](#Cocoapod)
+- [Cocoapods](#Cocoapods)
 - [Carthage](#Carthage)
 - [Apply Carthage(feat. RxSwift)](#Apply-Carthage(feat.-RxSwift))
 - [.gitignore](#.gitignore)
@@ -15,19 +15,45 @@ Carthage란 무엇인가, Cocoapod과의 차이, Carthage를 적용하는 방법
 
 # Dependency Manager
 
+https://stackoverflow.com/questions/27285783/package-manager-vs-dependency-manager 을 참고한다면, 
 
+**Dependency Manager**는 하나의 프로젝트에 국한된 것으로, 다른 프로젝트에서 사용을 위해서는 다시 설정을 해줘야합니다.
 
-# Cocoapod
+**Package Manager**는 시스템을 설정하는 것으로, 개발 환경을 설정해 놓으며 많은 프로젝트에 대하여 적용이 가능합니다.
+
+위 Manager들은
+
+- Third Party를 가져와서 프로젝트에 통합하는 처리를 단순화, 표준화 합니다. 
+
+  > 사용하지 않는다면, 모든 동작을 수동으로 처리해야합니다.
+
+- 나중에 Third Party 라이브러리를 쉽게 업데이트 할수 있습니다. 
+
+  > 사용하지 않는다면, 라이브러리가 업데이트될 때마다 하나씩 수동으로 업데이트해야합니다.
+
+- 만약 Third Party 내에서 의존성이 존재할 경우, 적절히 호환 가능한 버전을 골라냅니다.
+
+  > 사용하지 않는다면, 각 라이브러리마다 호환성을 따지며 추가해줘야합니다.
+
+![Dependency Graph](https://koenig-media.raywenderlich.com/uploads/2015/06/Screen-Shot-2015-06-28-at-18.18.31.png)
+
+# CocoaPods
 
 https://github.com/CocoaPods/CocoaPods
 
-
+- 설치와 사용이 쉽습니다.
+- `pods` 를 사용하기 위해서는 `.xcworkspace` 파일을 생성하고, 사용해야합니다. 
+- podspecs repositories는 중앙집중적이여서, 사라지거나 접근할 수 없을 때 문제가 발생할 수 있습니다.
+- 대부분의 라이브러리들이 지원을 하고 있습니다.
 
 # Carthage
 
 https://github.com/Carthage/Carthage
 
-
+- 초반 설정에 조금의 귀찮은 작업이 존재합니다.
+- workspace 사용에 대하여 강제성이 없습니다.
+- 반중앙집중적이며, Xcode Project에 의존성이 있습니다.
+- Carthage를 지원하지않는 라이브러리가 종종 존재합니다. :'(
 
 ## Apply Carthage(feat. RxSwift)
 
@@ -122,6 +148,8 @@ Carthage/Checkouts/
 ```
 
 ## Reference
+
+- https://medium.com/xcblog/swift-dependency-management-for-ios-3bcfc4771ec0
 
 - https://www.raywenderlich.com/416-carthage-tutorial-getting-started
 - https://www.mokacoding.com/blog/setting-up-testing-libraries-with-carthage-xcode7/

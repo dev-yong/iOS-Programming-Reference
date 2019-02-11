@@ -59,7 +59,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 > 개인 정리
 >
-> - [Carthage](Dependency_Manager/Carthage.md) (is Editing)
+> - [Carthage](Dependency_Manager/Carthage.md)
 
 # Style
 
@@ -125,7 +125,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # RxSwift
 
-- [ ] [RxSwift 4시간만에 끝내기](https://www.youtube.com/watch?v=w5Qmie-GbiA&list=PL03rJBlpwTaAh5zfc8KWALc3ADgugJwjq)
+- [x] [RxSwift 4시간만에 끝내기](https://www.youtube.com/watch?v=w5Qmie-GbiA&list=PL03rJBlpwTaAh5zfc8KWALc3ADgugJwjq)
 - [ ] [RxSwift Study](https://github.com/fimuxd/RxSwift)
 - [ ] [Examples](https://github.com/DroidsOnRoids/RxSwiftExamples)
 - [ ] [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
