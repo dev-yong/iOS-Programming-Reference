@@ -329,17 +329,19 @@ API를 디자인함에 있어 가장 중요한 것은 **"사용 시점"에서의
 >
 > ```swift
 > struct Point {
-> var x = 0.0, y = 0.0
-> mutating func moveBy(x deltaX: Double, y deltaY: Double) {
-> x += deltaX
-> y += deltaY
-> }
+> 	var x = 0.0, y = 0.0
+> 	mutating func moveBy(x deltaX: Double, y deltaY: Double) {
+> 		x += deltaX
+> 		y += deltaY
+> 	}
 > }
 > var somePoint = Point(x: 1.0, y: 1.0)
 > somePoint.moveBy(x: 2.0, y: 3.0)
 > print("The point is now at (\(somePoint.x), \(somePoint.y))")
 > // Prints "The point is now at (3.0, 4.0)"
 > ```
+
+노수진님의 조언을 통하여 보완되었습니다. 감사합니다 :]
 
 ## Reference
 
