@@ -49,6 +49,11 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [WWDC18. Swift Generics (Expanded)](https://developer.apple.com/videos/play/wwdc2018/406/)
 - [ ] [WWDC18. Using Collections Effectively](https://developer.apple.com/videos/play/wwdc2018/229/)
 
+> 개인 정리
+>
+> - [Value Semantics & Performance (is Editing)](Swift/ValueSemanticsAndPerformance.md)
+> - [Access Control](Swift/Access_Control.md)
+
 
 # Dependency Manager
 

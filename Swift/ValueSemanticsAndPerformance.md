@@ -12,6 +12,16 @@
 
 를 보며 내용을 첨삭할 예정입니다.
 
+## Table of Contents
+
+- [Value Semantics](#Value Semantics)
+- [Considerations for Performance](#Considerations-for-Performance)
+  - [Memory Allocation](#Memory-Allocation)
+  - [Reference Counting](#Reference-Counting)
+  - [Method dispatch](#Method-dispatch)
+  - [Swift Abstract Techniques and Performance](#Swift Abstract Techniques and Performance)
+- [Reference](#Reference)
+
 ## Value Semantics
 
 `struct`, `enum`, `tuple`
@@ -37,7 +47,7 @@
 
 
 
-## 성능을 위해 고려할 사항들
+## Considerations for Performance
 
 ### Memory Allocation
 
@@ -80,9 +90,10 @@
   - objc 연동을 최소화합니다.
   - WMO(Whole Module Optimization)을 사용합니다.
 
-### Swift 추상화 기법들과 성능
+### Swift Abstract Techniques and Performance
 
 - `class` 
+
   - Reference Semantics가 필요할 때 사용합니다.
   - `final class `는 static Mehod Dispatch입니다.
 
