@@ -138,6 +138,10 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
   - [ ] [우린 Git-flow를 사용하고 있어요](http://woowabros.github.io/experience/2017/10/30/baemin-mobile-git-branch-strategy.html)
   - [ ] [Git flow, GitHub flow, GitLab flow](https://ujuc.github.io/2015/12/16/git-flow-github-flow-gitlab-flow/)
 
+> 개인 정리
+>
+> - [Git Commit Message](Git/Git_Commit_Message.md)
+
 # ETC
 
 - [ ] [WWDC18. New Localization Workflows in Xcode 10](https://developer.apple.com/videos/play/wwdc2018/404/)
