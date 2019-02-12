@@ -90,8 +90,8 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [iOS Architecture Sample](https://github.com/giftbott/iOS-Architecture-Sample)
 - [ ] [Architecture + Clean Swift](https://tv.naver.com/v/4980400)
 - [ ] [iOS 애플리케이션 아키텍처 : MVVM, MVC, VIPER 전격 비교](https://academy.realm.io/kr/posts/krzysztof-zablocki-mDevCamp-ios-architecture-mvvm-mvc-viper/)
-- [ ] [MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
-- [ ] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
+- [x] [MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
+- [x] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
 
 # Design Pattern
 
@@ -112,9 +112,9 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Testing
 
-- Unit Test
-- UI Test
-  - [ ] [WWDC15. UI Testing in Xcode](https://developer.apple.com/videos/play/wwdc2015/406/)
+- [ ] [회고 : 두번째 개인 프로젝트를 TDD로 진행하며… #1 - Wade님](https://medium.com/@junhyi.park/회고-두번째-개인-프로젝트를-tdd로-진행하며-1-5345775d85bb)
+- [ ] [Swift의 강력한 mock 객체 만들기](https://academy.realm.io/kr/posts/making-mock-objects-more-useful-try-swift-2017/)
+- [ ] [WWDC15. UI Testing in Xcode](https://developer.apple.com/videos/play/wwdc2015/406/)
 
 # Concurrent Programming
 
@@ -128,6 +128,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [Swift와 함수형 프로그래밍의 역사](https://academy.realm.io/kr/posts/tryswift-rob-napier-swift-legacy-functional-programming/)
 - [ ] [Swift로 함수형 프로그래밍 시작하기](https://www.youtube.com/watch?v=H9aCQt2SPpQ)
 - [ ] [Functional Programming 이 뭐하는 건가요?](https://www.youtube.com/watch?time_continue=2&v=HZkqMiwT-5A)
+- [ ] [Why the Func: 왜 함수형 프로그래밍을 해야 하나요?](https://academy.realm.io/kr/posts/daniel-steinberg-altconf-2017-why-the-func/)
 
 # RxSwift
 
