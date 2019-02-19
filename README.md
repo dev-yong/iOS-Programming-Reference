@@ -96,6 +96,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - MVVM
   - [x] MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
   - [x] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
+  - [ ] [Introduction to MVVM - Ash Furrow](https://www.objc.io/issues/13-architecture/mvvm/)
 > 개인 정리
 >
 > - [MVVM(is Editing)](Architecture_Pattern/MVVM.md)
