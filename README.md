@@ -147,7 +147,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 > 개인 정리
 >
-> - [Observable, Disposing, Subject, Variable(is Editing)](RxSwift/Observable_Disposing_Subject_Variable.md)
+> - [Observable, Disposing, Subject, Variable](RxSwift/Observable_Disposing_Subject_Variable.md)
 
 # Git
 

@@ -7,6 +7,8 @@
 
   - [Event](#Event)
 - [Disposing](#Disposing)
+  - [Dispose Bag](#Dispose-Bag)
+  - [Take Until](#Take-Until)
 - [Subject](#Subject)
   - [PublicSubject](#PublicSubject)
   - [ReplaySubject](#ReplaySubject)
@@ -26,30 +28,29 @@
 
   - 또한, `.next` 가 끝나기 전까지 `.completed` 혹은 `.error` 를 보낼 수 없습니다.
 
-  ```swift
-  someObservable
-    .subscribe { (e: Event<Element>) in
-        print("Event processing started")
-        // processing
-        print("Event processing ended")
-    }
-  
-  //❌ 불가능
-  //Event processing started
-  //Event processing started
-  //Event processing ended
-  //Event processing ended
-  
-  //✅ 
-  //Event processing started
-  //Event processing ended
-  //Event processing started
-  //Event processing ended
-  //Event processing started
-  //Event processing ended
-  ```
 
-  
+```swift
+someObservable
+  .subscribe { (e: Event<Element>) in
+      print("Event processing started")
+      // processing
+      print("Event processing ended")
+  }
+
+//❌ 불가능
+//Event processing started
+//Event processing started
+//Event processing ended
+//Event processing ended
+
+//✅ 
+//Event processing started
+//Event processing ended
+//Event processing started
+//Event processing ended
+//Event processing started
+//Event processing ended
+```
 
 - ` Observable`이 **생성되었더라도, `Observable`은 어떠한 작업도 수행하지 않습니다.**
 
@@ -112,20 +113,58 @@ protocol ObserverType {
 > 다시 한번 읽고 정리하자! (https://github.com/ReactiveX/RxSwift/blob/master/Documentation/GettingStarted.md#disposing)
 >
 
-Sequnce element들과 사용가능한 resource의 생산을 즉시 취소하려면, subscription의 반환에 대해 `dispose`를 호출하면 됩니다.
+- Sequence를 종료하고 resources를 해제하고자 할때, `dispose` 를 호출합니다.
+  - `DisposeBag` ,  `takeUntil` , 혹은 또다른 메커니즘을 사용하는 더 좋은 방법들이 있습니다.
 
 ```swift
 func subscribe(onNext: ((Int) -> Void)? = default, onError: ((Error) -> Void)? = default, onCompleted: (() -> Void)? = default, onDisposed: (() -> Void)? = default) -> Disposable
 ```
 
 ```swift
+let scheduler = SerialDispatchQueueScheduler(qos: .default)
+let subscription = Observable<Int>.interval(0.3, scheduler: scheduler)
+    .subscribe { event in
+        print(event)
+}
+
+Thread.sleep(forTimeInterval: 2.0)
+
+subscription.dispose()
+//dispose()를 호출함으로써 Sequence를 종료합니다.
+```
+
+- 위의 코드는 `dispose` 실행 이후에 어떤 것들을 출력할 수 있을까?
+
+  - `scheduler` 가 **Serial Scheduler**(ex. `MainScheduler`)이며 `dispose` 가 **동일한 serial scheduler** 에서 호출이 된다면, 출력이 **불가능**합니다.
+  - 그렇지 않다면, 출력이 **가능**합니다.
+  - 이러한 프로세스가 다른 scheduler에 있다면 의미가 없습니다.
+
+  > 음.. 계속 읽어보지만 아직 잘 이해가 가지 않습니다. :'(
+
+```swift
+let scheduler = SerialDispatchQueueScheduler(qos: .default)
 let subscription = Observable<Int>.interval(0.3, scheduler: scheduler)
             .observeOn(MainScheduler.instance)
             .subscribe { event in
                 print(event)
             }
 
-subscription.dispose() 
+Thread.sleep(forTimeInterval: 2.0)
+
+subscription.dispose() // called from main thread
+//interval(, scheduler: )은 `scheduler`에 위치하고 있고,
+//subscribe와 dispose는 `MainScheduler`에 위치하고 있어
+//의미가 없습니다.
+```
+
+### Dispose Bag
+
+- `DisposeBag` 의 할당이 해제될 때, `DisposeBag` 에 들어가 있는 disposeable들의 `dispose` 를 호출할 것입니다.
+- `DisposeBag` 은 `dispose` method가 존재하지 않습니다.
+  - 즉각적인 정리가 필요하다면, 새롭게 할당해주면 됩니다.
+
+```swift
+self.disposeBag = DisposeBag()
 ```
 
 > Q. Driver와 Observable의 차이? (조금 더 이후의 내용)
@@ -138,6 +177,18 @@ subscription.dispose()
 > - onError: Action to invoke upon errored termination of the observable sequence.
 > - onCompleted: Action to invoke upon graceful termination of the observable sequence.
 > - onDisposed: Action to invoke upon any type of termination of sequence (if the sequence has gracefully completed, errored, or if the generation is canceled by disposing subscription).
+
+### Take Until
+
+- 자동적으로 subscription을 dispose시키기 위한 방법 중 하나입니다.
+
+```swift
+let subscription = Observable<Int>.interval(0.3, scheduler: scheduler)
+            .takeUntil(rx.deallocated)
+            .subscribe { event in
+                print(event)
+        }
+```
 
 ## Subject
 
