@@ -73,25 +73,33 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
    - [(eng)](https://swift.org/documentation/api-design-guidelines/)
    - [(kor)](https://minsone.github.io/swift-internals/api-design-guidelines/?utm_source=soojinro&utm_medium=referral)
    - [(kor) 요약본](https://soojin.ro/blog/swift-api-design-guidelines-abbr)
-- [ ] [Ray wenderlich style guide](https://github.com/raywenderlich/swift-style-guide)
-- [ ] [Github style guide (kor)](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
+- [x] [Ray wenderlich style guide](https://github.com/raywenderlich/swift-style-guide)
+- [x] [Github style guide (kor)](https://github.com/minsOne/swift-style-guide/blob/master/README_KR.md)
 - [x] [Swift Lint](https://github.com/realm/SwiftLint)   
 
 > 개인 정리
 >
 > - [API Design Guidelines With Grammar](Style/API_Design_Guidelines_With_Grammar.md)
->
 > - [SwiftLint](Style/SwiftLint.md)
+> - [Style Guide](Style/Style_Guide.md)
 
 # Architecture Pattern
 
-- [ ] [Apple Model-View-Controller](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
 - [ ] [Bohdan Orlov's iOS Architecture Pattern](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52)
 - [ ] [iOS Architecture Sample](https://github.com/giftbott/iOS-Architecture-Sample)
 - [ ] [Architecture + Clean Swift](https://tv.naver.com/v/4980400)
 - [ ] [iOS 애플리케이션 아키텍처 : MVVM, MVC, VIPER 전격 비교](https://academy.realm.io/kr/posts/krzysztof-zablocki-mDevCamp-ios-architecture-mvvm-mvc-viper/)
-- [ ] [MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
-- [ ] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
+- MVC
+  - [ ] [Apple Model-View-Controller](https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/MVC.html)
+  - [ ] [Model-View-Controller (MVC) in iOS: A Modern Approach - Ray Wenderlich](https://www.raywenderlich.com/1073-model-view-controller-mvc-in-ios-a-modern-approach)
+  - [ ] [Modern MVC](https://medium.com/ios-os-x-development/modern-mvc-39042a9097ca)
+- MVVM
+  - [x] MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
+  - [x] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
+  - [ ] [Introduction to MVVM - Ash Furrow](https://www.objc.io/issues/13-architecture/mvvm/)
+> 개인 정리
+>
+> - [MVVM(is Editing)](Architecture_Pattern/MVVM.md)
 
 # Design Pattern
 
@@ -112,9 +120,9 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # Testing
 
-- Unit Test
-- UI Test
-  - [ ] [WWDC15. UI Testing in Xcode](https://developer.apple.com/videos/play/wwdc2015/406/)
+- [ ] [회고 : 두번째 개인 프로젝트를 TDD로 진행하며… #1 - Wade님](https://medium.com/@junhyi.park/회고-두번째-개인-프로젝트를-tdd로-진행하며-1-5345775d85bb)
+- [ ] [Swift의 강력한 mock 객체 만들기](https://academy.realm.io/kr/posts/making-mock-objects-more-useful-try-swift-2017/)
+- [ ] [WWDC15. UI Testing in Xcode](https://developer.apple.com/videos/play/wwdc2015/406/)
 
 # Concurrent Programming
 
@@ -128,6 +136,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [Swift와 함수형 프로그래밍의 역사](https://academy.realm.io/kr/posts/tryswift-rob-napier-swift-legacy-functional-programming/)
 - [ ] [Swift로 함수형 프로그래밍 시작하기](https://www.youtube.com/watch?v=H9aCQt2SPpQ)
 - [ ] [Functional Programming 이 뭐하는 건가요?](https://www.youtube.com/watch?time_continue=2&v=HZkqMiwT-5A)
+- [ ] [Why the Func: 왜 함수형 프로그래밍을 해야 하나요?](https://academy.realm.io/kr/posts/daniel-steinberg-altconf-2017-why-the-func/)
 
 # RxSwift
 
@@ -150,9 +159,14 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # ETC
 
-- [ ] [WWDC18. New Localization Workflows in Xcode 10](https://developer.apple.com/videos/play/wwdc2018/404/)
+- Localization
+  - [ ] [WWDC18. New Localization Workflows in Xcode 10](https://developer.apple.com/videos/play/wwdc2018/404/)
 - Auto Layout, Animation
   - [ ] [WWDC18. High Performance Auto Layout](https://developer.apple.com/videos/play/wwdc2018/220/)
   - [ ] [WWDC15. Mysteries of Auto Layout, Part 1](https://developer.apple.com/videos/play/wwdc2015/218/)
   - [ ] [WWDC15. Mysteries of Auto Layout, Part 2](https://developer.apple.com/videos/play/wwdc2015/219/)
   - [ ] [WWDC17. Advanced Animations with UIKit](https://developer.apple.com/videos/play/wwdc2017/230/)
+
+- JWT, OAuth
+  - [ ] [OAuth와 춤을](https://d2.naver.com/helloworld/24942)
+  - [ ] [OAuth 2.0 대표 취약점과 보안 고려 사항 알아보기](https://meetup.toast.com/posts/105)
