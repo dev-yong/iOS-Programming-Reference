@@ -145,6 +145,10 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [ ] [Examples](https://github.com/DroidsOnRoids/RxSwiftExamples)
 - [ ] [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
 
+> 개인 정리
+>
+> - [Observable, Disposing, Subject, Variable(is Editing)](RxSwift/Observable_Disposing_Subject_Variable.md)
+
 # Git
 
 - [x] [좋은 git 커밋 메시지를 작성하기 위한 7가지 약속](https://meetup.toast.com/posts/106)
