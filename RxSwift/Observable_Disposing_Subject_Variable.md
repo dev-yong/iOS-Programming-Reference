@@ -9,7 +9,7 @@
   - [Dispose Bag](#Dispose-Bag)
   - [Take Until](#Take-Until)
 - [Subject](#Subject)
-  - [PublicSubject](#PublicSubject)
+  - [PublishSubject](#PublishSubject)
   - [ReplaySubject](#ReplaySubject)
   - [BehaviorSubject](#BehaviorSubject)
 - [Variable](#Variable)
