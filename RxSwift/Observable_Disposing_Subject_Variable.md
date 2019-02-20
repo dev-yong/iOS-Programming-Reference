@@ -4,7 +4,6 @@
 
 - [Observable](#Observable)
   - [Basic](#Basic)
-
   - [Event](#Event)
 - [Disposing](#Disposing)
   - [Dispose Bag](#Dispose-Bag)

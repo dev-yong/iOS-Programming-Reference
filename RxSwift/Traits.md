@@ -67,9 +67,9 @@ struct Driver<Element> {
 - **Error을 방출할 수 없습니다.** = **절대 실패하지 않습니다**.
 - **Observe는 main scheduler에서만 발생**합니다.
 - Side effect를 공유합니다.
-- Driver의 의도된 use-case는 application을 drive하는 sequence를 모델링하는 것입니다.
-  - e.g. CoreData modle로부터 UI를 drive합니다.
-  - e.g. 다른 UI elements로 부터 value를 이용하여 UI를 drive합니다.
+- Driver의 의도된 use-case는 application을 구동하는 sequence를 모델링하는 것입니다.
+  - e.g. CoreData modle로부터 UI를 구동합니다.
+  - e.g. 다른 UI elements로 부터 value를 이용하여 UI를 구동합니다.
 
 ## Reference
 
