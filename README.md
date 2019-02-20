@@ -21,6 +21,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Funtional Programming](#Funtional-Programming)
 - [RxSwift](#RxSwift)
 - [Git](#Git)
+- [Store Data](#Store data)
 - [ETC](#ETC)
 
 # Computer Science
@@ -160,6 +161,18 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 > 개인 정리
 >
 > - [Git Commit Message](Git/Git_Commit_Message.md)
+
+# Store Data
+
+- UserDefaults
+- CoreData
+- NSKeyedArchiver
+- SQLite
+- Realm
+
+> 개인 정리
+>
+> - [Store Data(is Editing)](Store_Data/Store_Data.md)
 
 # ETC
 
