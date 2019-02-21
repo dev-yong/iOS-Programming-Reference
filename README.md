@@ -95,9 +95,11 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
   - [ ] [Model-View-Controller (MVC) in iOS: A Modern Approach - Ray Wenderlich](https://www.raywenderlich.com/1073-model-view-controller-mvc-in-ios-a-modern-approach)
   - [ ] [Modern MVC](https://medium.com/ios-os-x-development/modern-mvc-39042a9097ca)
 - MVVM
-  - [x] MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
+  - [x] [MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
   - [x] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
   - [ ] [Introduction to MVVM - Ash Furrow](https://www.objc.io/issues/13-architecture/mvvm/)
+- VIP
+  - [ ] [Clean Swift](https://clean-swift.com/clean-swift-ios-architecture/)
 > 개인 정리
 >
 > - [MVVM(is Editing)](Architecture_Pattern/MVVM.md)
