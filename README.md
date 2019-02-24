@@ -38,7 +38,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 > 개인 정리
 >
-> - [Clean Code 정리(is Editing)](Clean_Code/Clean_Code.md)
+> - [Clean Code 정리(is Editing)](Clean_Code/README.md)
 
 # OOP
 
