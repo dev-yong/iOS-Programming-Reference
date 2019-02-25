@@ -6,4 +6,5 @@ Uncle Bob의 [Clean Code - 애자일 소프트웨어 장인 정신 번역본](ht
 
 - [Chapter 1. Clean Code](Clean_code.md)
 - [Chapter 2. 의미 있는 이름](의미있는이름.md)
+- [Chapter 3. 함수](함수.md)
 
