@@ -12,6 +12,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Swift](#Swift)
 - [Dependency Manager](#Dependency-Manager)
 - [Style](#Style)
+- [Architecture](#Architecture)
 - [Architecture Pattern](#Architecture-Pattern)
 - [Design Pattern](#Design-Pattern)
 - [Debug](#Debug)
@@ -21,7 +22,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - [Funtional Programming](#Funtional-Programming)
 - [RxSwift](#RxSwift)
 - [Git](#Git)
-- [Store Data](#Store data)
+- [Store Data](#Store-data)
 - [ETC](#ETC)
 
 # Computer Science
@@ -34,6 +35,10 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 - [ ] [Clean code](https://g.co/kgs/JYnTVF)
 - [ ] [Clean Code 스터디](https://github.com/Yooii-Studios/Clean-Code)
+
+> 개인 정리
+>
+> - [Clean Code 정리(is Editing)](Clean_Code/README.md)
 
 # OOP
 
@@ -84,6 +89,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 > - [SwiftLint](Style/SwiftLint.md)
 > - [Style Guide](Style/Style_Guide.md)
 
+# Architecture
+
+- Clean Architecture
+  - [ ] [The Clean Architecture - Uncle Bob](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+  - [ ] [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+
 # Architecture Pattern
 
 - [ ] [Bohdan Orlov's iOS Architecture Pattern](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52)
@@ -95,9 +106,11 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
   - [ ] [Model-View-Controller (MVC) in iOS: A Modern Approach - Ray Wenderlich](https://www.raywenderlich.com/1073-model-view-controller-mvc-in-ios-a-modern-approach)
   - [ ] [Modern MVC](https://medium.com/ios-os-x-development/modern-mvc-39042a9097ca)
 - MVVM
-  - [x] MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
+  - [x] [MVVM 아키텍처 패턴 - Gyuwon님](https://blog.weirdx.io/post/39547)
   - [x] [MVVM 응용프로그램을 위한 프로젝트 구조화 - Gyuwon님](https://blog.weirdx.io/post/39596)
   - [ ] [Introduction to MVVM - Ash Furrow](https://www.objc.io/issues/13-architecture/mvvm/)
+- VIP
+  - [ ] [Clean Swift](https://clean-swift.com/clean-swift-ios-architecture/)
 > 개인 정리
 >
 > - [MVVM(is Editing)](Architecture_Pattern/MVVM.md)
@@ -142,13 +155,13 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 # RxSwift
 
 - [x] [RxSwift 4시간만에 끝내기](https://www.youtube.com/watch?v=w5Qmie-GbiA&list=PL03rJBlpwTaAh5zfc8KWALc3ADgugJwjq)
-- [ ] [RxSwift Study](https://github.com/fimuxd/RxSwift)
+- [x] [RxSwift Study](https://github.com/fimuxd/RxSwift)
 - [ ] [Examples](https://github.com/DroidsOnRoids/RxSwiftExamples)
-- [ ] [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
 
 > 개인 정리
 >
 > - [Observable, Disposing, Subject, Variable](RxSwift/Observable_Disposing_Subject_Variable.md)
+> - [Traits](RxSwift/Traits.md)
 
 # Git
 
