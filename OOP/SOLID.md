@@ -11,6 +11,7 @@
   - [Strategic Closure](#Strategic-Closure)
   - [OCP Example](#OCP-Example)
 - [The Liskov Substitution Principle](#The-Liskov-Substitution-Principle)
+  - [Design by Contract](#Design-by-Contract)
 - [The Interface Segregation Principle](#The-Interface-Segregation-Principle)
 - [The Dependency Inversion Principle](#The-Dependency-Inversion-Principle)
 
@@ -192,7 +193,148 @@ func accelateAll(drivables: [Drivable]) {
 
 ## The Liskov Substitution Principle
 
-##### 프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다.
+### "Derived classes must be substitutable for their base classes."
+
+> 파생 클래스는 Base 클래스로 치환될 수 있어야합니다.
+>
+> **프로그램의 객체는 프로그램의 정확성을 깨뜨리지 않으면서 하위 타입의 인스턴스로 바꿀 수 있어야 한다.**
+
+#### Design by Contract
+
+- Class의 Method는 **Precondition** 와 **Postcondition** 을 선언합니다.
+  - Method를 수행하려면 Precondition이 참이어야합니다.
+  - Precondition이 참이라면, Method는 Postcondition이 참임을 보증합니다.
+- 파생물에서 루틴을 재정의할 때, Precondition을 더 약한 것에 의해서만 바꿀 수 있고
+  Postcondition을 더 강한 것에 의해서만 바꿀 수 있습니다. 
+  - Base class interface 를 통하여 객체를 사용할 때, 사용자는 오직 Base Class의 Precondition과 Postcondition에 대해서만 압니다.
+  - 그러므로, **파생된 객체는 사용자가 Base Class가 요구하는 것보다 더욱 강한 Precondition을 따를 것으로 예상해서는 안됩니다**.
+  - 또한, **파생된 객체는 Base Class의 Postcondition들을 모두 부합해야합니다**.
+    - 즉, 모든 Behavior과 Output은 Base Class에서 설정된 어떤 제약조건들에도 위반되지 않아야합니다.
+  - 기본 클래스의 사용자는 파생 클래스의 출력에 대하여 혼동되지 않아야합니다.
+
+#### LSP Example
+
+- Precondition
+
+```swift
+class Handler {
+    func save(string: String) {
+        // Save string in the Cloud
+    }
+}
+
+class FilteredHandler: Handler {
+    override func save(string: String) {
+        //😨 Violate LSP - Precondition
+        guard string.count > 5 else { return } // Precondition
+        super.save(string: string)
+    }
+}
+```
+
+Base Class인  `Handler` 를 사용하는 Client는 파생 Class인 `FilteredHandler` 와 동일한 로직을 에상하고 사용할 것입니다.
+
+하지만, 파생 Class인 `FilteredHandler` 에는 Base Class인 `Handler` 보다 더욱 강한 Precondition을 따르고 있어, LSP를 위반하고 있습니다.
+
+```swift
+class Handler {
+    func save(string: String, minChars: Int = 0) {
+        guard string.characters.count >= minChars else { return }
+        // Save string in the Cloud
+    }
+}
+
+class FilteredHandler: Handler {
+    override func save(string: String) {
+        super.save(string: string)
+    }
+}
+```
+
+Base Class인 `Handler` 에 Precondition을 설정하여줍니다.
+
+- Postcondition
+
+정사각형 `Square` 는 직사각형 `Rectangle` 의 일종으로 볼 수 있으며, `Rectangle` 이 될 수 있습니다. 
+
+하지만, `Square` 의 **행동**이 `Rectangle` 의 **행동**과 일치하지 않기 때문에, `Square` 는 명백히 `Rectangle` 이 아닙니다.
+
+행동적으로, `Square` 은 `Rectangle` 이 아니며, 소프트웨어에서 중요한 것은 **행동(Behavior)** 입니다
+
+```swift
+class Rectangle {
+    var width: Float = 0
+    var length: Float = 0
+ 
+    var area: Float {
+        return width * length
+    }
+}
+ 
+class Square: Rectangle {
+    override var width: Float {
+        didSet {
+            //😨 Violate LSP - Postcondition
+            length = width
+        }
+    }
+}
+```
+
+파생 Class인 `Square` 는 Base Class `Rectangle` 의 모든 Postcondition을 부합하지 않기 때문에 LSP를 위반하였습니다.
+
+```swift
+func printArea(of rectangle: Rectangle) {
+    rectangle.length = 5
+    rectangle.width = 2
+    print(rectangle.area)
+}
+
+let rectangle = Rectangle()
+printArea(of: rectangle) // 10
+// -------------------------------
+let square = Square()
+printArea(of: square) // 4
+```
+
+`Square` 에 대하여  `printArea(of: )` 를 수행하면,  `width * length` 의 결과 값이 10이 출력되어야하지만 Postcondition이 추가되어 `lengt` 를 `width` 의 값으로 변경해버려 4가 출력됩니다.
+
+`protocol` 을 이용하여 LCP를 따릅니다.
+
+```swift
+//👍 Conform OCP
+protocol Polygon {
+    var area: Float { get }
+}
+ 
+class Rectangle: Polygon {
+ 
+    private let width: Float
+    private let length: Float
+ 
+    init(width: Float, length: Float) {
+        self.width = width
+        self.length = length
+    }
+ 
+    var area: Float {
+        return width * length
+    }
+}
+ 
+class Square: Polygon {
+ 
+    private let side: Float
+ 
+    init(side: Float) {
+        self.side = side
+    }
+ 
+    var area: Float {
+        return pow(side, 2)
+    }
+}
+```
 
 ## The Interface Segregation Principle
 
