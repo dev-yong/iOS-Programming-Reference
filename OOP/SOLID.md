@@ -21,6 +21,8 @@
 - [The Interface Segregation Principle](#The-Interface-Segregation-Principle)
   - [Example](#Example)
 - [The Dependency Inversion Principle](#The-Dependency-Inversion-Principle)
+  - [Inversion](#Inversion)
+  - [Layering](#Layering)
 
 ## Bad Design
 
@@ -109,9 +111,17 @@ class Convenience {
 //3가지의 책임들을 decouple할 수 있습니다.
 //👍 Conform SRP
 class Car {
-    let driving = Driving()
-    let maintenance = Maintenance()
-    let convenience = Convenience()
+    let driving: Driving 
+    let maintenance: Maintenance
+    let convenience: Convenience
+    
+    init(driving: Driving,
+        maintenance: Maintenance,
+        convenience: Convenience) {
+        self.driving = driving
+        self.maintenance = maintenance
+        self.convenience = convenience
+	}
     
     func accelerate() { driving.accelerate() }
     func brake() { driving.brake() }
@@ -486,7 +496,20 @@ func play(video: Playable) {
 ### "Depend on abstractions, not on concretions."
 
 > ##### 추상화에 의존해야지 구체화에 의존하면 안된다.
->
+
+- 상위 계층의 모듈은 하위 계층의 모듈에 의존하면 안된다. 상위 계층이던 하위 계층이던 추상화에 의존해야합니다.
+- 추상화는 세부사항에 의존해서는 안된다. 세부사항이 추상화에 의존해야합니다.
+
+### Inversion
+
+- 전통적인 소프트웨어 개발방법은 상위 계층이 하위 계층에 의존하고, 추상화가 세부사항에 의존하였습니다.
+- 잘 설계된 객체 지향 프로그램의 종속 구조는 일반적으로 전통적인 절차적 방법에서 비롯되는 종속 구조에 관해서 "**역전(Inversion)**"됩니다.
+  - 잘 설계된 객체 지향 프로그램은 상위 계층이 하위 계층에 의존하지 않고,
+  - 세부사항이 추상화에 의존합니다.
+
+### Layering
+
+- 잘 구조화된 객체 지향 아키텍처들은 명확하게 정의된 계층을 가지고 있으며, 각 계층은 잘 정의되고 통제된 인터페이스임에도 불구하고 일관된 서비스 집합을 제공합니다.
 
 ## Reference
 
