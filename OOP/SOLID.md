@@ -2,6 +2,11 @@
 
 ## Table of Contents
 
+- [Bad Design](#Bad-Design)
+  - [Rigidity](#Rigidity)
+  - [Fragility](#Fragility)
+  - [Immobility](#Immobility)
+
 - [The Single Responsibility Principle](#The-Single-Responsibility-Principle)
   - [Responsibility](#Responsibility)
   - [SRP Example](#SRP-Example)
@@ -12,8 +17,27 @@
   - [OCP Example](#OCP-Example)
 - [The Liskov Substitution Principle](#The-Liskov-Substitution-Principle)
   - [Design by Contract](#Design-by-Contract)
+  - [LSP Example](#LSP-Example)
 - [The Interface Segregation Principle](#The-Interface-Segregation-Principle)
+  - [Example](#Example)
 - [The Dependency Inversion Principle](#The-Dependency-Inversion-Principle)
+
+## Bad Design
+
+### Rigidity
+
+- 경직, 딱딱함
+- 변화들이 시스템의 많은 부분들에 영향을 끼치기 때문에 바꾸기 어렵습니다.
+
+### Fragility
+
+- 취약성
+- 변경을 주었을 때, 시스템의 예상치 못한 부분이 손상됩니다.
+
+### Immobility
+
+- 고정
+- 현재의 어플리케이션에서 분리될 수 없기 때문에, 다른 어플리케이션에서 재사용하기 쉽지 않습니다.
 
 ## The Single Responsibility Principle
 
@@ -114,9 +138,9 @@ class Car {
 
 #### Primary attributes
 
-- 확장에는 열려있다.(Open for Extension)
+- **확장에는 열려있다**.(Open for Extension)
   - 모듈의 행동은 확장되어질 수 있습니다.
-- 변경에는 닫혀있다.(Closed for Modification)
+- **변경에는 닫혀있다.**(Closed for Modification)
   - 모듈의 소스 코드는 침범되지 않는다.
   - 모듈에 대한 소스 코드를 변경하는 것은 아무도 허용되지 않는다.
 
@@ -130,8 +154,6 @@ class Car {
 
 - 명시적인 폐쇄를 위하여 추상화를 사용합니다.
 - 폐쇄를 달성하기 위하여 "Data Driven' 접근법을 이용합니다.
-
-> 아직은 잘 이해가 되지 않습니다..
 
 #### OCP Example
 
@@ -338,15 +360,141 @@ class Square: Polygon {
 
 ## The Interface Segregation Principle
 
-##### 특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.
+### "Make fine grained interfaces that are client specific."
+
+> 클라이언트별로 세분화된 interface를 만듭니다.
+>
+> **특정 클라이언트를 위한 인터페이스 여러 개가 범용 인터페이스 하나보다 낫다.**
+
+- "Fat" 인터페이스를 갖는 클래스는 인터페이스가 응집도가 낮은 클래스입니다.
+  - 클래스의 인터페이스는 맴버함수의 그룹으로 나눌 수 있습니다.
+
+#### Example
+
+- Fat interface (Protocol)
+
+```swift
+protocol GestureProtocol {
+    func didTap()
+    func didDoubleTap()
+    func didLongPress()
+}
+
+class Button: GestureProtocol {
+    func didTap() {
+        // send tap action
+    }
+ 
+    func didDoubleTap() {
+        // send double tap action
+    }
+ 
+    func didLongPress() {
+        // send long press action
+    }
+}
+```
+
+만일, `Button` 이 `didTap()` 만이 필요하다면, 나머지의 것들은 필요가 없습니다.
+
+이럴 경우, 여러 개의 protocol로 쪼개어 줍니다.
+
+```swift
+protocol TapProtocol {
+    func didTap()
+}
+ 
+protocol DoubleTapProtocol {
+    func didDoubleTap()
+}
+ 
+protocol LongPressProtocol {
+    func didLongPress()
+}
+ 
+class SuperButton: TapProtocol, DoubleTapProtocol, LongPressProtocol {
+    func didTap() {
+        // send tap action
+    }
+ 
+    func didDoubleTap() {
+        // send double tap action
+    }
+ 
+    func didLongPress() {
+        // send long press action
+    }
+}
+ 
+class PoorButton: TapProtocol {
+    func didTap() {
+        // send tap action
+    }
+}
+```
+
+- Fat interface (Class)
+
+```swift
+class Video {
+    var title: String = "My Video"
+    var description: String = "This is a beautiful video"
+    var author: String = "Marco Santarossa"
+    var url: String = "https://marcosantadev.com/my_video"
+    var duration: Int = 60
+    var created: Date = Date()
+    var update: Date = Date()
+}
+
+func play(video: Video) {
+    // load the player UI
+    // load the content at video.url
+    // add video.title to the player UI title
+    // update the player scrubber with video.duration
+}
+```
+
+`Video` 클래스를 구현하였고, `play(video:)` 를 이용하여 재생하고자 합니다. 이 때, `play(video:)` 는 `title`, `description`, `duration` 정보만이 필요합니다. Protocol을 이용하여 이 구조 또한 나누어줍니다.
+
+```swift
+protocol Playable {
+    var title: String { get }
+    var url: String { get }
+    var duration: Int { get }
+}
+ 
+class Video: Playable {
+    var title: String = "My Video"
+    var description: String = "This is a beautiful video"
+    var author: String = "Marco Santarossa"
+    var url: String = "https://marcosantadev.com/my_video"
+    var duration: Int = 60
+    var created: Date = Date()
+    var update: Date = Date()
+}
+ 
+func play(video: Playable) {
+    // load the player UI
+    // load the content at video.url
+    // add video.title to the player UI title
+    // update
+}
+```
 
 ## The Dependency Inversion Principle
 
-##### 추상화에 의존해야지 구체화에 의존하면 안된다.
+### "Depend on abstractions, not on concretions."
 
-> 의존성 주입
+> ##### 추상화에 의존해야지 구체화에 의존하면 안된다.
+>
 
 ## Reference
+
+- [Single Responsibility Principle](https://drive.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/view)
+- [Open-Closed Principle](https://drive.google.com/file/d/0BwhCYaYDn8EgN2M5MTkwM2EtNWFkZC00ZTI3LWFjZTUtNTFhZGZiYmUzODc1/view)
+- [Liskov Substitution Principle](https://drive.google.com/file/d/0BwhCYaYDn8EgNzAzZjA5ZmItNjU3NS00MzQ5LTkwYjMtMDJhNDU5ZTM0MTlh/view)
+- [Interface Segregation Principle](https://drive.google.com/file/d/0BwhCYaYDn8EgOTViYjJhYzMtMzYxMC00MzFjLWJjMzYtOGJiMDc5N2JkYmJi/view)
+- [Dependency Inversion Principle](https://drive.google.com/file/d/0BwhCYaYDn8EgMjdlMWIzNGUtZTQ0NC00ZjQ5LTkwYzQtZjRhMDRlNTQ3ZGMz/view)
 
 - https://github.com/ochococo/OOD-Principles-In-Swift
 - https://clean-swift.com/single-responsibility-principle-for-class/
