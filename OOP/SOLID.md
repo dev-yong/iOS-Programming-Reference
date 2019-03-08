@@ -511,6 +511,77 @@ func play(video: Playable) {
 
 - 잘 구조화된 객체 지향 아키텍처들은 명확하게 정의된 계층을 가지고 있으며, 각 계층은 잘 정의되고 통제된 인터페이스임에도 불구하고 일관된 서비스 집합을 제공합니다.
 
+- Dependency is transitive.
+
+  > 종속성은 타동적이다
+
+#### Example
+
+```swift
+class Handler {
+    let fm = FilesystemManager()
+ 
+    func handle(string: String) {
+        fm.save(string: string)
+    }
+}
+ 
+class FilesystemManager {
+ 
+    func save(string: String) {
+        // Open a file
+        // Save the string in this file
+        // Close the file
+    }
+}
+```
+
+하위 계층 모듈 `FilesystemManager`  는 다른 프로젝트에서도 재사용할 수 있습니다. 
+
+하지만, 상위 계층 모듈인  `Handler` 는 하위 계층 모듈인 `FilesysemManager` 에 의존하고 있기 때문에, 재사용되어지기 힘듭니다
+
+이러한 경우 다른 Storage에 재사용이 불가능하기도 합니다.
+
+```swift
+class Handler {
+ 
+    let storage: Storage
+ 
+    init(storage: Storage) {
+        self.storage = storage
+    }
+ 
+    func handle(string: String) {
+        storage.save(string: string)
+    }
+}
+ 
+protocol Storage {
+ 
+   func save(string: String)
+}
+ 
+class FilesystemManager: Storage {
+ 
+    func save(string: String) {
+        // Open a file in read-mode
+        // Save the string in this file
+        // Close the file
+    }
+}
+ 
+class DatabaseManager: Storage {
+ 
+    func save(string: String) {
+        // Connect to the database
+        // Execute the query to save the string in a table
+        // Close the connection
+    }
+}
+```
+
+`Storage` 프로토콜을 사용함으로써 세부사항 `FilesystemManger`, `DatabaseManager` 를 추상화에 의존하게 만들었으며 상위 계층 하위계층 모두 추상화에 의존하게 되어 의존성의 역전이 일어나게 됩니다.
+
 ## Reference
 
 - [Single Responsibility Principle](https://drive.google.com/file/d/0ByOwmqah_nuGNHEtcU5OekdDMkk/view)
