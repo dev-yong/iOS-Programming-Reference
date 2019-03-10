@@ -42,8 +42,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # OOP
 
-- [ ] [OOD Principlies in Swift](https://github.com/ochococo/OOD-Principles-In-Swift)
+- [x] [OOD Principlies in Swift](https://github.com/ochococo/OOD-Principles-In-Swift)
 - [ ] [생각하라, 객체지향처럼](http://woowabros.github.io/study/2016/07/07/think_object_oriented.html)
+
+> 개인 정리
+>
+> - [S.O.L.I.D](OOP/SOLID.md)
 
 # Swift
 
