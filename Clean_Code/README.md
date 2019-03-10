@@ -8,5 +8,6 @@ Uncle Bob의 [Clean Code - 애자일 소프트웨어 장인 정신 번역본](ht
 - [Chapter 2. 의미 있는 이름](의미있는이름.md)
 - [Chapter 3. 함수](함수.md)
 - [Chapter 4. 주석](주석.md)
-- [Chpater 5. 형식 맞추기](#형식_맞추기.md)
+- [Chapter 5. 형식 맞추기](형식_맞추기.md)
+- [Chapter 6. 객체와 자료 구조](객체와_자료_구조.md)
 
