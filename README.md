@@ -203,3 +203,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - JWT, OAuth
   - [ ] [OAuth와 춤을](https://d2.naver.com/helloworld/24942)
   - [ ] [OAuth 2.0 대표 취약점과 보안 고려 사항 알아보기](https://meetup.toast.com/posts/105)
+
+> 개인 정리
+>
+> - [Class Diagram](ETC/Class_Diagram.md)
