@@ -34,7 +34,6 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 # Clean code
 
 - [ ] [Clean code](https://g.co/kgs/JYnTVF)
-- [ ] [Clean Code 스터디](https://github.com/Yooii-Studios/Clean-Code)
 
 > 개인 정리
 >
@@ -42,8 +41,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 # OOP
 
-- [ ] [OOD Principlies in Swift](https://github.com/ochococo/OOD-Principles-In-Swift)
-- [ ] [생각하라, 객체지향처럼](http://woowabros.github.io/study/2016/07/07/think_object_oriented.html)
+- [x] [OOD Principlies in Swift](https://github.com/ochococo/OOD-Principles-In-Swift)
+- [x] [생각하라, 객체지향처럼](http://woowabros.github.io/study/2016/07/07/think_object_oriented.html)
+
+> 개인 정리
+>
+> - [S.O.L.I.D](OOP/SOLID.md)
 
 # Swift
 
@@ -57,7 +60,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 > 개인 정리
 >
-> - [Value Semantics & Performance (is Editing)](Swift/ValueSemanticsAndPerformance.md)
+> - [Value Semantics & Performance](Swift/ValueSemanticsAndPerformance.md) (is Editing. Need to update about WWDC videos)
 > - [Access Control](Swift/Access_Control.md)
 
 
@@ -113,7 +116,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
   - [ ] [Clean Swift](https://clean-swift.com/clean-swift-ios-architecture/)
 > 개인 정리
 >
-> - [MVVM(is Editing)](Architecture_Pattern/MVVM.md)
+> - [MVVM](Architecture_Pattern/MVVM.md)  (is Editing. Need to establish an accurate concept.)
 
 # Design Pattern
 
@@ -200,3 +203,8 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 - JWT, OAuth
   - [ ] [OAuth와 춤을](https://d2.naver.com/helloworld/24942)
   - [ ] [OAuth 2.0 대표 취약점과 보안 고려 사항 알아보기](https://meetup.toast.com/posts/105)
+
+> 개인 정리
+>
+> - [Class Diagram](ETC/Class_Diagram.md)
+> - [Layout](ETC/Layout.md) (is Edting. Need to update about objc.io's content)
