@@ -151,7 +151,7 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 
 > 개인 정리
 >
-> - [GCD](Concurrency/GCD.md) is Editing
+> - [GCD](Concurrency/GrandCentralDispatch.md) is Editing
 
 # Funtional Programming
 - [ ] [Swift와 함수형 프로그래밍의 역사](https://academy.realm.io/kr/posts/tryswift-rob-napier-swift-legacy-functional-programming/)
