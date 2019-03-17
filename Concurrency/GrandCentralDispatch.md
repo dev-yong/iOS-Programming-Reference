@@ -70,7 +70,51 @@ queue.async {
 
 Dispatch main queue는 main thread에서 실행하는 모든 항목들을 서비스합니다. 즉, `DispatchQueue.main` 을 호출한 다음 main queue에서 aync하게 호출하면 해당 코드가 수행되고 UI를 업데이트할 수 있습니다.
 
-Concurrency를 꼭 제어해야합니다. Dipsatch가 사용하는 thread pool은 모든 호출을 완성하기 위하여 호출된 concurrency를 제한합니다.
+Concurrency를 꼭 제어해야합니다. Dipsatch가 사용하는 thread pool은 모든 호출을 완성하기 위하여 호출된 concurrency를 제한합니다. 그러나 이러한 thread를 차단할 때 응용 프로그램의 다른 부분을 기다리거나 sys 호출을 기다리는 경우, 차단 된 worker thread로 인해 더 많은 worker thread가 생성 될 수 있습니다. 
+
+Dispatch는 concurrency를 제공하기 위하여 코드를 계속 실행하기 위한 새로운 thread를 제공합니다. 코드를 실행하기위한 적절한 개수의 dispatch queue를 선택하는 것은 매우 중요합니다. 그렇지 않다면, thread를 차단할 수 있습니다. 또다른 thread가 나타나서 그와 또다른 thread를 차단할 수도 있습니다. 이러한 형식을 thread explosion이라고 부릅니다.
+
+![image-20190316215725397](/Users/igwang-yong/Library/Application Support/typora-user-images/image-20190316215725397.png)
+
+Dispatch group은 작업 추적에 도움이 됩니다.
+
+그룹에 많은 작업을 추가 할 수 있으며이를 다른 queue에서도 할 수 있지만,  같은 그룹과 연관시킬 수 있습니다. 그룹에 작업을 제출할 때마다, 그룹은 완료 예상 카운터를 증가시킵니다. 그리고 그룹에게 모든 작업이 끝나면 알려달라고 요청할 수 있고, 자신이 선택한 queue에서 그렇게 한다고 말할 수 있습니다.
+
+![image-20190316223159513](/Users/igwang-yong/Library/Application Support/typora-user-images/image-20190316223159513.png)
+
+Syncronous
+
+Subsystem 사이의 serialize state를 위하여 synchronous 실행을 사용할 수 있습니다. Serial queue와 dispatch queue들은 자연적으로 연속적(serial)입니다. 그리고 이것을 mutual exclusion property로 사용할 수 있습니다.
+
+```swift
+var count: Int {
+    queue.sync { self.connections.count }
+}
+```
+
+deadlock을 발생시킬 수 있으니 주의해야합니다.
+
+![image-20190316223442267](/Users/igwang-yong/Library/Application Support/typora-user-images/image-20190316223442267.png)
+
+QoS
+
+Dispatch하기 위해 제출되는 작업들을 명시적으로 분류합니다.
+
+개발자의 의도를 표현할 수 있습니다.
+
+![image-20190316225759744](/Users/igwang-yong/Library/Application Support/typora-user-images/image-20190316225759744.png)
+
+DispatchWorkItem
+
+DispatchWorkItem을 사용하여 실행 방법을보다 세부적으로 제어 할 수있는 항목을 만들 수 있습니다. 
+
+`.wait`
+
+Semaphore 와 group에서 기다리는 것은 소유권 정보를 저장하지 않습니다.
+
+
+
+## Reference
 
 https://www.raywenderlich.com/5370-grand-central-dispatch-tutorial-for-swift-4-part-1-2
 
