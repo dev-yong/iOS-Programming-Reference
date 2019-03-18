@@ -114,6 +114,29 @@ Semaphore 와 group에서 기다리는 것은 소유권 정보를 저장하지 �
 
 
 
+global 변수는  atomic하게 초기화 됩니다.  하지만 클래스 property와 lazy property는 atomic 하지 않습니다.
+
+"There is no such thing as a benign race."
+
+Synchronization 포인트를 잊는 다면, 크래쉬를 일으키거나 유저의 데이터를 손상시킬 수 있습니다.
+
+```swift
+class Foo {
+    private let internalState: Int
+    private let internalQueue: DispatchQueue
+    var state: Int {
+        get {
+            return internalQueue.sync { internalState }
+        }
+        set {
+        	internalQueue.sync { internalState = newState }
+		}
+    }
+}
+```
+
+![image-20190317233000043](/Users/igwang-yong/Library/Application Support/typora-user-images/image-20190317233000043.png)
+
 ## Reference
 
 https://www.raywenderlich.com/5370-grand-central-dispatch-tutorial-for-swift-4-part-1-2
