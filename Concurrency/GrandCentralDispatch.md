@@ -1,5 +1,36 @@
 # Global Central Dispatch
 
+## Table of Contents
+
+- [Concurrency](#Concurrency)
+- [Queue](#Queue)
+
+## Parallelism and Concurrency
+
+### Parallelism
+
+- 멀티 코어 디바이스에서 사용합니다.
+- 여러개의 thread를 "동시"에 수행합니다.
+- 반면, 멀티 코어 디바이스는 **parallelism** 를 통하여 여러개의 thread를 동시에 시수행합니다.
+
+### Concurrency
+
+- 싱글 코어 디바이스에서 사용합니다.
+- **Time Slicing** 을 이용하여 
+  1. 하나의 Thread를 수행하고
+  2. Context Switch를 실행 후
+  3. 또다른 Thread를 수행합니다.
+
+![Image](https://koenig-media.raywenderlich.com/uploads/2014/01/Concurrency_vs_Parallelism.png)
+
+
+
+## GCD
+
+-  **dispatch queue** 에 code 블럭 혹은 work item을 추가할 수 있고, 어떠한 thread에서 이것들을 실행할 것인지를 결정합니다.
+
+# Global Central Dispatch
+
 Application에는 Main Thread가 존재하고 있습니다. 이 Main Thread는 User Interface를 책임지고 있습니다. 만약, Data transform이나 Image Processing과 같은 작업이 Main Thread에서 진행되게 된다면, 아마 UI는 버벅이거나 멈출 것입니다.
 
 ![image-20190314000412190](/Users/igwang-yong/Library/Application Support/typora-user-images/image-20190314000412190.png)
@@ -140,8 +171,6 @@ class Foo {
 ## Reference
 
 https://www.raywenderlich.com/5370-grand-central-dispatch-tutorial-for-swift-4-part-1-2
-
-https://medium.com/@gabriel_lewis/threading-in-swift-simply-explained-5c8dd680b9b2
 
 https://developer.apple.com/videos/play/wwdc2017/706/
 
