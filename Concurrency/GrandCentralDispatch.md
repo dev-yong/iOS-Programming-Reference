@@ -4,8 +4,16 @@
 
 - [Concurrency](#Concurrency)
 - [Queue](#Queue)
+  - [Serial Queue](#Serial-Queue)
+  - [Concurrent Queue](#Concurrent-Queue)
+- [Global Central Dispatch](#Global-Central-Dispatch)
+  - [Main Dispatch Queue](#Main-Dispatch-Queue)
+  - [Global Dispatch Queue](#Global-Dispatch-Queue)
+    - [Quality of Service](#Quality-of-Service)
 
 ## Parallelism and Concurrency
+
+- Concurrency는 structure에 관한 것인 반면 parallelism은 
 
 ### Parallelism
 
@@ -23,11 +31,52 @@
 
 ![Image](https://koenig-media.raywenderlich.com/uploads/2014/01/Concurrency_vs_Parallelism.png)
 
+## Queue
 
+- GCD는 **`DispatchQueue`** 라는 클래스를 통해 dispatch queue에서 작동합니다.
+- 작업 단위를 queue에 전송하면 GCD는 FIFO(First in, First out) 순으로 작업을 실행합니다.
 
-## GCD
+### Serial Queue
 
--  **dispatch queue** 에 code 블럭 혹은 work item을 추가할 수 있고, 어떠한 thread에서 이것들을 실행할 것인지를 결정합니다.
+- **주어진 시간에 대하여 오직 하나의 task만이 실행**됩니다.
+
+![Serial](https://koenig-media.raywenderlich.com/uploads/2014/09/Serial-Queue-Swift-480x272.png)
+
+### Concurrent Queue
+
+- **동일한 시간에 여러개의 task를 실행**할 수 있습니다.
+
+- FIFO순으로 실행하기 때문에,  task를 추가한 순서대로 시작하도록 보장됩니다.
+
+  - ## 단, **task의 종료에 대한 순서는 알 수 없습니다.**
+
+![Concurrent](https://koenig-media.raywenderlich.com/uploads/2014/09/Concurrent-Queue-Swift-480x272.png)
+
+## Global Central Dispatch
+
+-  Dispatch queue는 **thread safe** 합니다.
+   -  즉, 여러 thread들이 동시에 dispatch queue에 접근할 수 있습니다.
+-  **Dispatch queue** 에 code 블럭 혹은 work item을 추가할 수 있고, 어떠한 thread에서 이것들을 실행할 것인지를 결정합니다.
+-  시스템과 이용가능한 시스템 리소스를 기반으로 하여 얼마나 많은 parallelism이 필요한지 결정합니다.
+  - **Parallelism은 concurrency를 필요로합니다.**
+  - 하지만, **concurrency는 parallelism을 보장하진 않습니다.**
+
+### Main Dispatch Queue
+
+- **Main thread에서 실행**됩니다.
+- **Serail Queue**입니다.
+- **UI에 대한 모든 것을 전담**합니다.
+
+### Global Dispatch Queue
+
+- 전체 시스템에서 공유하는 **Concurrent Queue** 입니다.
+
+#### Quality of Service
+
+- User-Interactive
+- User-Initiated
+- Utility
+- Background
 
 # Global Central Dispatch
 
@@ -179,4 +228,6 @@ https://developer.apple.com/videos/play/wwdc2016/720/
 https://developer.apple.com/videos/play/wwdc2015/226/
 
 https://developer.apple.com/library/archive/documentation/General/Conceptual/ConcurrencyProgrammingGuide/Introduction/Introduction.html
+
+https://developer.apple.com/library/archive/documentation/Performance/Conceptual/EnergyGuide-iOS/index.html
 
