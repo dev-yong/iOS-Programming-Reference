@@ -18,45 +18,11 @@
   >
   > "이것은 Todo list를 위한 Application이며, Todo에 대한 CRUD를 할 수 있다."를 알아야합니다.
 
+- 상속은 매우 강한 관계입니다. Interface를 이용하여 수평확장을 합니다.
+
 ![Architecture the lost years](https://hugo.ferreira.cc/wp-content/uploads/2012/07/tumblr_m7wjx4QuLX1qz82meo1_1280.png)
 
-- 경계(||)를 이용하여 Low level detail로부터 High level policy를 보호함을 나타냅니다.
-  - I/O들을 경계(||)를 통하여 소스 코드의 의존성을 역전시켜야 합니다.
-- Controller는 사용자의 요청을 받아 Request Model(DTO, Command)를 만들고 Boundary<\<I>>를 통하여 경계(||)의 내부로 전달합니다.
-- Interactor는 Boundary<\<I>>를 구현하고 있고, Controller에서 넘겨준 Request Model을 사용하여 Entity의 함수를 호출합니다.
-- Interactor는 Entity Gateway<\<I>>를 통하여 상태를 불러오거나 저장합니다.
-- Entity GateWay Implementaton은 Entity Gateway<\<I>>를 구현하고 있고, 데이터베이스 의 조회 및 저장 작업 등을 수행합니다.
-- Interactor는 요청을 처리한 후, Response Model을 만들고 Boundary<\<I>>를 통하여 경계(||)의 외부로 전달합니다.
-- Presentor는 Boundary<\<I>>를 구현하고 있으며, Interactor가 전달한 Response Model을 가공하고, View Model의 데이터를 채워줍니다.
-
-
-
-- Application의 의도는 Use Case를 통하여 드러나게 됩니다.
-
-  - 따라서, Application의 Architecture는 Use Case들입니다.
-
-- UI, Database, Framework 등은 Detail입니다.
-
-  - Database는 저장소일 뿐, Business Rule과는 관련이 없습니다. 
-
-    > The database is a detail
-
-### Use Case
-
-- Application의 의도를 나타냅니다.
-- I/O (e.g. UI, Database, Framework 등)을 모릅니다.
-
-### Interactor
-
-- Application에 종속적인 Business Rule을 다룹니다.
-
-### Domain
-
-- Application과 무관한 Business Rule을 다룹니다.
-
-
-
-## 특징
+### 특징
 
 - 프레임워크 독립적
 - 테스트 용이함
@@ -88,7 +54,14 @@
 ### Entity
 
 - Enterprise Business Rule을 캡슐화합니다.
+  - 규칙이자 정책이며 Application이 없어도 존재할 수 있습니다.
   - 단지 하나의 Application을 작성할 뿐이라면, 해당 Application의 Business Object가 됩니다.
+
+> 비지니스 규칙
+>
+> - 모든 어플리케이션에 적용이 되어야하는 글로벌 비지니스 규칙 (Entity)
+> - 개발중인 어플리케이션에만 적용되는 비지니스 규칙 (UseCase)
+
 - 가장 일반적이면서 고수준의 규칙을 캡슐화합니다.
 - Business Object는 오염되지 않아야합니다.
   - 바깥 영역의 것이 변경되더라도 바뀌지 않습니다.
@@ -98,9 +71,14 @@
 
 ### UseCase
 
+- **Application의 의도는 Use Case를 통하여 드러나게 됩니다**.
+  - 따라서, **Application의 Architecture는 Use Case**들입니다. 
 - UseCase 계층은 Application 고유의 Business Rule을 포함하며 시스템의 모든 UseCase를 캡슐화하고 구현합니다.
+- Application 없이 존재할 수 없습니다.
 - UseCase들은 Entity로 향하는 혹은 Entity로 부터 나오는 데이터 흐름을 조정합니다.
 - UseCase 계층의 변경이 보다 내부의 영역인 Entity에 영향을 주지 않아야 하며, 보다 외부의 영역인 Database, UI, Framework의 변경으로부터 영향을 받지 않아야합니다.
+- UseCase는 Interactor라는 Object로 바꿀 수 있습니다. 
+  - 즉, UseCase와 Interactor는 동일하다고 봐도 됩니다.
 
 ### Interface Adapter
 
@@ -112,41 +90,26 @@
 
 - 가장 바깥 계층으로, Database나 Web Framework 등과 같은 툴들 과 프레임워크들로 구성되어져 있습니다.
 
+- UI, Database, Framework 등은 Detail입니다.
+  - Database는 저장소일 뿐, Business Rule과는 관련이 없습니다. 
 
+    > The database is a detail
 
 ### Reference
 
 - [The Clean Architecture - Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-
 - [The Clean Architecture - Uncle Bob (한글 번역)](https://blog.coderifleman.com/2017/12/18/the-clean-architecture/?utm_medium=social&utm_source=gaerae.com&utm_campaign=개발자스럽다)
-
-- [Robert C. Martin - Clean Architecture and Design](https://amara.org/ko/videos/0AtjY87egE3m/url/1216370/?tab=video)
-
+- [Robert C. Martin - Clean Architecture and Design (2014)](https://amara.org/ko/videos/0AtjY87egE3m/url/1216370/?tab=video)
 - [안드로이드에 Clean Architecture 적용하기](https://academy.realm.io/kr/posts/clean-architecture-in-android/)
-
 - [아키텍처와 의존성](https://blog.appkr.dev/learn-n-think/clean-architecture-and-dependency/)
+- [Introducing Clean Architecture](https://www.slideshare.net/rocboronat/introducing-clean-architecture-61200981?from_action=save)
+- [Architecting Android...The clean way?](https://fernandocejas.com/2014/09/03/architecting-android-the-clean-way/)
+
+
+- [The Principles of Clean Architecture by Uncle Bob Martin](https://www.youtube.com/watch?v=o_TH-Y78tt4&t=1113s)
+- [Robert C Martin - Clean Architecture (2012)](https://www.youtube.com/watch?v=Nltqi7ODZTM)
+
+
+- [Robert C Martin - Clean Architecture and Design (2013)](https://www.youtube.com/watch?v=Nsjsiz2A9mg&t=1s)
 
   
-
-- [Introducing Clean Swift Architecture (VIP)](https://hackernoon.com/introducing-clean-swift-architecture-vip-770a639ad7bf)
-
-  
-
-  
-
-- https://github.com/sergdort/CleanArchitectureRxSwift
-
-- https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
-
-- https://blog.coderifleman.com/2017/12/18/the-clean-architecture/
-
-- https://medium.com/@younghyun/clean-architecture-part-2-the-clean-architecture-3e2666cdce83
-
-- https://academy.realm.io/kr/posts/converting-an-app-to-use-clean-architecture/
-
-- https://www.youtube.com/watch?v=Nsjsiz2A9mg&t=1s
-
-- https://www.youtube.com/watch?v=Nltqi7ODZTM
-
-- https://www.youtube.com/watch?v=o_TH-Y78tt4&t=1113s
-
