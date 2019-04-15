@@ -24,7 +24,7 @@
 
 - 상속은 매우 강한 관계입니다. Interface를 이용하여 수평확장을 합니다.
 
-![CleanDevelopment-12](/Users/igwang-yong/Downloads/CleanDevelopment-12.jpg)
+![CleanDevelopment-12](images/CleanDevelopment-12.jpg)
 
 ### 특징
 
