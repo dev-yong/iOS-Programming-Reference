@@ -95,8 +95,12 @@ iOS 개발과 관련된, 공부해야할 것들에 대해 모아놓은 repositor
 # Architecture
 
 - Clean Architecture
-  - [ ] [The Clean Architecture - Uncle Bob](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-  - [ ] [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+  - [x] [The Clean Architecture - Uncle Bob](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
+  - [x] [CleanArchitectureRxSwift](https://github.com/sergdort/CleanArchitectureRxSwift)
+
+> 개인 정리
+>
+> - [Clean Architecture](Architecture/CleanArchitecture.md)  
 
 # Architecture Pattern
 
